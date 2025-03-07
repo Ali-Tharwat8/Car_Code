@@ -176,31 +176,31 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  int L1, L2, L3, R1, R2, R3;
+	  GPIO_PinState L1, L2, L3, R1, R2, R3;
 	  readAll(&L1, &L2, &L3, &R1, &R2, &R3);
-	  
+
 	  ///////////////////////////////////////////
-	  
+
 	  while(L1 && !L2 && !L3)
 	  {
 		  turnright(speed, turn1);
 		  readLeft(&L1, &L2, &L3);
 	  }
-	  
+
 	  while(L2 && !L3)
 	  {
 		  turnright(speed, turn2);
-		  readLeft(&L1, &L2, &L3);	  
+		  readLeft(&L1, &L2, &L3);
 	  }
-	  
+
 	  while(L3)
 	  {
 		  turnright(speed, turn3);
 		  readLeft(&L1, &L2, &L3);
 	  }
-	  
+
 	  ////////////////////////////////////////////
-	  
+
 	  while(R1 && !R2 && !R3)
 	  {
 		  turnleft(turn1, speed);
@@ -221,7 +221,7 @@ int main(void)
 	  }
 
 	  ////////////////////////////////////////////
-	  
+
 	  while(!L1 && !L2 && !L3 && !R1 && !R2 && !R3)
 	  {
 		  forward(speed, speed);
