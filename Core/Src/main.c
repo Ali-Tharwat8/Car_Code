@@ -141,6 +141,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	GPIO_PinState L1, L2, L3, R1, R2, R3;
 	int speed = 100;
 	int turn1 = 30;
 	int turn2 = 105;
@@ -176,7 +177,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  GPIO_PinState L1, L2, L3, R1, R2, R3;
 	  readAll(&L1, &L2, &L3, &R1, &R2, &R3);
 
 	  ///////////////////////////////////////////
